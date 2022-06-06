@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      // JavaScript
+      //   const root = document.querySelector('#root');
+
+      //   const element = document.createElement('h1');
+      //   element.textContent = 'Hello from JS!';
+      //   element.className = 'heading-1';
+
+      //   root.appendChild(element);
+
+      // ReactJs
+      const root = document.querySelector('#root');
+
+      // ReactJs 1 element
+      //   const element = React.createElement('h1', {
+      //     children: 'Hello from React!',
+      //     className: 'heading-1',
+      //   });
+
+      // ReactJs 2 element harus di bungkus dulu
+      // const p1 = React.createElement('p', {
+      //     children: 'Hello paragraf 1',
+      //   });
+      // const p2 = React.createElement('p', {
+      //     children: 'Hello paragraf 2',
+      //   });
+
+      // const element = React.createElement('div',{
+      //     children: [p1,p2],
+      // });
+
+      // ReactJs List
+      // const element = React.createElement(
+      //     'ul',{
+      //         className: 'list'},
+      //         React.createElement('li',null,'Apple'),
+      //         React.createElement('li',null,'Orange'),
+      //         React.createElement('li',null,'Grape'),
+      // );
+
+      // mentransformasi code React Jsx non-standar menjadi Js standar dengan Babel
+      // const element =(
+      //     <ul>
+      //         <li>Appple</li>
+      //         <li>Orange</li>
+      //         <li>Grape</li>
+      //         </ul>
+      // );
+
+      // props embed Jsexpression
+      const className = 'heading-1';
+      const element = <h1 className={className}>Hello Rahmat</h1>
+      // const element = (
+      // <img src="https://unsplash.com/photos/w1TzZSB_rMw"/>
+      // );
+
+      ReactDOM.render(element, root);
+    </script>
+  </body>
+</html>
