@@ -1,0 +1,19 @@
+{
+  "name": "belajar-react-basic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://gitlab.com/maxxi-tani/internship/belajar-react-js.git",
+  "author": "Rizal07040 <adirizal775@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "lite-server": "^2.6.1"
+  },
+  "scripts": {
+    "build": "babel src --out-dir public -w",
+    "serve": "lite-server --baseDir public",
+    "start": "yarn build & yarn serve"
+  }
+}
