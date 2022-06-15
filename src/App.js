@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import { Link, Route, Routes   } from 'react-router-dom'
+import {Nav ,Container ,} from 'react-bootstrap'
 import './App.css';
+import Blog from './pages/Blog';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Tambah from './pages/Tambah';
+import Edit from './pages/Edit';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Container>
+    <Nav>
+        <Nav.Item><Nav.Link as={Link}  to="/">Home</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link as={Link} to="/profile">Profile</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link as={Link}  to="/blog">Blog</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link as={Link}  to="/contact">Contact</Nav.Link></Nav.Item>
+      </Nav>
+      
+      <Routes>
+        <Route path="/" element={<Home  />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="blog" element={<Blog />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="tambah" element={<Tambah />} />
+        <Route path="edit" element={<Edit />} />
+      </Routes>
+    </Container>
+     
     </div>
   );
 }
