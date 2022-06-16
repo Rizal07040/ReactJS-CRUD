@@ -31,6 +31,8 @@ export default function Tambah(){
     }
     
     return(
+       
+
         <Container className="mt-3">
             <Row>
                 <Col md="{12}">
@@ -44,7 +46,7 @@ export default function Tambah(){
                                         <ul class="mt-0 mb-0">
                                             { validation.errors.map((error, index) => (
                                                 <li key={index}>{ `${error.param} : ${error.msg}` }</li>
-                                            )) }
+                                                )) }
                                         </ul>
                                     </Alert>
                             }
@@ -52,12 +54,12 @@ export default function Tambah(){
                             <Form onSubmit={createData}>
                                 <Form.Group className="mb-3" >
                                     <Form.Label>TITLE</Form.Label>
-                                    <Form.Control type="text" value={tittle} onChange={(e) => setTittle(e.target.value)} placeholder="Masukkan Title" />
+                                    <Form.Control type="text" value={tittle} onChange={(e) => setTittle(e.target.value)} placeholder="Masukkan Title..." />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" >
                                     <Form.Label>DESCRIBTION</Form.Label>
-                                    <Form.Control type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Masukkan Content" />
+                                    <Form.Control type="text-area" as='textarea' value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Masukkan Description..." />
                                 </Form.Group>
 
                                 <Button variant="primary" type="submit">
@@ -66,6 +68,7 @@ export default function Tambah(){
                             </Form>
                         </Card.Body>
                     </Card>
+                                                
                 
                 </Col>
             </Row>

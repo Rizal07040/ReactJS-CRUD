@@ -1,7 +1,13 @@
-.Home-btn{
-  width: 20px;
+.App {
+  margin-top: 3rem;
+  padding: 3rem;
+  background-color: #cddbf7;
+  font-family: 'Signika', sans-serif;
 }
 
+.NavBar {
+  background-color: black;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -11,6 +17,16 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.Nav.Link:hover::after {
+  content: '';
+  display: block;
+  border-bottom: 3px solid #E45826;
+  width: 50%;
+  margin: auto;
+  padding-bottom: 5px;
+  margin-bottom: -8px;
 }
 
 .App-header {
