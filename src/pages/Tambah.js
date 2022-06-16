@@ -23,7 +23,7 @@ export default function Tambah(){
             tittle: tittle,
             description: description
         }).then(() =>{
-            navigate.push('/home')
+            navigate('/')
         })
         .catch((error) => {
             setValidation(error.response.data)
@@ -51,12 +51,12 @@ export default function Tambah(){
                             
                             <Form onSubmit={createData}>
                                 <Form.Group className="mb-3" >
-                                    <Form.Label>Nama</Form.Label>
+                                    <Form.Label>TITLE</Form.Label>
                                     <Form.Control type="text" value={tittle} onChange={(e) => setTittle(e.target.value)} placeholder="Masukkan Title" />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" >
-                                    <Form.Label>Job</Form.Label>
+                                    <Form.Label>DESCRIBTION</Form.Label>
                                     <Form.Control type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Masukkan Content" />
                                 </Form.Group>
 

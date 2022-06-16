@@ -12,8 +12,9 @@ function App() {
   return (
     <div className="App">
     <Container>
-    <Nav>
-        <Nav.Item><Nav.Link as={Link}  to="/">Home</Nav.Link></Nav.Item>
+    <Nav className='navbar navbar-expand-lg fixed-top navbar-dark main-color shadow p-3 mb-5'>
+      
+        <Nav.Item ><Nav.Link as={Link}  to="/">Home</Nav.Link></Nav.Item>
         <Nav.Item><Nav.Link as={Link} to="/profile">Profile</Nav.Link></Nav.Item>
         <Nav.Item><Nav.Link as={Link}  to="/blog">Blog</Nav.Link></Nav.Item>
         <Nav.Item><Nav.Link as={Link}  to="/contact">Contact</Nav.Link></Nav.Item>
@@ -25,7 +26,7 @@ function App() {
         <Route path="blog" element={<Blog />} />
         <Route path="contact" element={<Contact />} />
         <Route path="tambah" element={<Tambah />} />
-        <Route path="edit" element={<Edit />} />
+        <Route path="edit/:id" element={<Edit />} />
       </Routes>
     </Container>
      

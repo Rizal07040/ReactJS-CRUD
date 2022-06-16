@@ -113,12 +113,22 @@ export default function Home() {
         //get response data
         const data = await response.data.data;
 
-        //assign response data to state "posts"
+         //assign response data to state "posts"
         setAmbil(data);
     }
 
+    const deletePost = async (id) => {
+
+        //sending
+        await axios.delete(`https://dhiyo-api-article.herokuapp.com/articles/${id}`);
+    
+        //panggil function "fetchData"
+        getData();
+    }
+
     return (
-            <Container className="mt-3">
+            <Container fluid className="mt-4">
+                
             <Row>
                 <Col md="{12}">
                     <Card className="border-0 rounded shadow-sm">
@@ -141,8 +151,8 @@ export default function Home() {
                                             <td>{ ambil.id }</td>
                                             <td>{ ambil.tittle }</td>
                                             <td>{ ambil.description }</td>
-                                            <td ><Button as={Link} to={'/edit'} className='me-4' color="primary">Update</Button> 
-                                            <Button color="primary">Delete</Button> </td>
+                                            <td ><Button as={Link} to={`/edit/${ambil.id}`} className='me-4' color="primary">Update</Button> 
+                                            <Button onClick={() => deletePost(ambil.id)} variant="danger" size="sm">DELETE</Button></td>
                                             <td className="text-center"></td>
                                         </tr>
                                     )) }
