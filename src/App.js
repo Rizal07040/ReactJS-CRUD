@@ -8,6 +8,7 @@ import Tambah from './pages/Tambah';
 import Edit from './pages/Edit';
 import NavBar from './components/NavBar';
 
+
 function App() {
   return (
     <div className="App">
