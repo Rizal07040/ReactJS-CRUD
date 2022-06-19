@@ -11,6 +11,7 @@ import { Card, Row, Col, Button, Table, Form } from 'react-bootstrap';
 //import axios
 import axios from 'axios';
 import Pagenation from '../components/Pagenation';
+import { BsArrowDownUp } from 'react-icons/bs'
 
 
 export default function Home() {
@@ -25,12 +26,12 @@ export default function Home() {
     //useEffect hook
     useEffect(() => {
 
-        //panggil method "fetchData"
+        //panggil method "getData"
         getData();
 
     }, []);
 
-    //function "fetchData"
+    //function "getData"
     const getData = async () => {
         //fetching
         const response = await axios.get('https://dhiyo-api-article.herokuapp.com/articles');
@@ -38,7 +39,7 @@ export default function Home() {
         const data = await response.data.data;
         
 
-         //assign response data to state "posts"
+         //assign response data to state "ambil"
         setAmbil(data);
         
     }
@@ -59,6 +60,7 @@ export default function Home() {
     // Merubah Halaman
     const paginate = noHalaman => setCurrentPage(noHalaman);
 
+    // Sorting data
     const sorting = (col) => {
         if (order === "ASC") {
             const sorted = [...ambil].sort((a, b) => 
@@ -99,8 +101,8 @@ export default function Home() {
                                 <thead>
                                     <tr>
                                         <th onClick={() => sorting("id")} scope='col' className='text-center'>NO.</th>
-                                        <th onClick={() => sorting("tittle")} scope='col'>TITLE </th>
-                                        <th onClick={() => sorting("description")} width='60%'>DESCRIBTION</th>
+                                        <th onClick={() => sorting("tittle")} scope='col'>TITTLE<BsArrowDownUp size={15} /></th>
+                                        <th onClick={() => sorting("description")} width='60%'>DESCRIBTION<BsArrowDownUp size={15} /></th>
                                         <th width='20%' className='text-center'>AKSI</th>
                                     </tr>
                                 </thead>
@@ -114,6 +116,7 @@ export default function Home() {
                                         ){
                                           return val;  
                                         }
+                                        
                                     }).map((ambil) => (
                                         <tr key={ ambil.id }>
                                             <td>{ ambil.id }</td>
